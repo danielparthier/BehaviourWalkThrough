@@ -1,0 +1,13 @@
+---
+title: "README"
+bibliography: ["BehaviourAnalysis.bib"]
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Analysis Walk Through
+
+This repository introduces the usage of DeepLabCut [@mathis_deeplabcut_2018] and the post-processing and usage of the output using the `BehaviouR` [package](https://github.com/danielparthier/BehaviourAnalysis).
