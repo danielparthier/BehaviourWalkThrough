@@ -20,7 +20,6 @@ library(DiagrammeR)
 ```
 
 ## Motivation
-
 * Use full potential of video data
   + Time resolution
   + Spatial information
@@ -28,37 +27,57 @@ library(DiagrammeR)
   + Easy integration in analysis workflow
 
 ## DeepLabCut
-
 * Machine learning implementation by **@mathis_deeplabcut_2018**
   + Written in `Python` and based on *TensorFlow* **[@martin_abadi_tensorflow_2015]**
-  + *CPU* or *GPU* structure
+  + can run on *CPU*, *GPU*, or *TPU*
   + Computation can be outsourced (*Google Colab*)
 * Easy training of model
   + GUI implementation
-  + Fast extraction of feature coordinates
-  + High resolution and accuracy (different body parts)
+* Fast extraction of feature coordinates
+* High resolution and accuracy (different body parts)
   
-## R Package (`BehaviouR`)
+## Running DeepLabCut {.build}
+* On local machine
+```{bash, echo=T, eval=F}
+conda env create -f DLC-CPU.yaml    # run on CPU
+conda env create -f DLC-GPU.yaml    # run on GPU
+```
+* Future version of `BehaviouR` could include function call from within `R`
 
+* Run in the cloud!
+    + *Google Colab* demonstration by Hung
+
+## R Package (`BehaviouR`)
 * Package using the *DeepLabCut* output
 * Features
     + Smoothing of tracking
     + Grouping of labels
     + Helper functions (distance, speed, angles, centroids, plotting, etc.)
     + Stationary object functions
+    + Batch analysis
     + GUI implementation as `shiny`-app
     + Multithreading (powered by `DataTable`)
   
-## Data Structure
-
-```{r pressure}
-plot(pressure)
+## Data Structure {.build}
+* Nested `DataTable`
+    + `CoordTable` and `ObjectTable`
+```{r, echo=TRUE, eval=F, fig.cap="Function to load data"}
+# Load data from DeepLabCut
+MouseBodyList <- list()
+MouseBodyList$head <- c("ear", "nose")
+MouseBodyList$body <- c("ear", "tail")
+ObjectList <- list("object")
+BehaviouR::DeepLabCutLoad(FileName = "DeepLabCut_ouput.csv",
+                          FrameRate = 30,
+                          MouseLabels = MouseBodyList,
+                          ObjectLabels = ObjectList,
+                          JumpCorrections = T,
+                          includeAll = F)
 ```
 
 ## Workflow
-
-```{r echo=FALSE, fig.align='right', fig.pos = 'p'}
-test <- grViz("digraph Workflow {
+```{r echo=FALSE}
+grViz("digraph Workflow {
       # node definitions with substituted label text
       node [fontname = Helvetica, shape = rectangle]        
       tab1 [label = '@@1']
@@ -88,7 +107,6 @@ test <- grViz("digraph Workflow {
       [7]: 'Report Summary'
       [8]: 'External Calculation of Parameters (Python, MATLAB, etc.)'
       ", width = 1000)
-test
 ```
 
 ## References
