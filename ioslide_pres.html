@@ -4797,16 +4797,15 @@ pre {
 font-family: 'Source Code Pro', 'Courier New', monospace;
 font-size: 20px;
 line-height: 28px;
-padding: 10px -20px 10px 60px;
+padding: 10px 0 10px 60px;
 letter-spacing: -1px;
 margin-bottom: 20px;
-width: auto;
+width: 106%;
 left: -60px;
 position: relative;
--webkit-box-sizing: content-box;
--moz-box-sizing: content-box;
-box-sizing: content-box;
-background-color: #e6e6e6;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
 
 }
 .prettyprint {
@@ -5785,7 +5784,7 @@ font-size: 14px;
 <li>High resolution and accuracy (different body parts)</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Running DeepLabCut</h2></hgroup><article  id="running-deeplabcut" class="build">
+</article></slide><slide class=""><hgroup><h2>Running DeepLabCut</h2></hgroup><article  class="build" id="running-deeplabcut">
 
 <ul class = 'build'>
 <li>On local machine</li>
@@ -5820,7 +5819,7 @@ conda env create -f DLC-GPU.yaml    # run on GPU</pre>
 </ul></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Data Structure</h2></hgroup><article  id="data-structure" class="build">
+</article></slide><slide class=""><hgroup><h2>Data Structure</h2></hgroup><article  class="build" id="data-structure">
 
 <ul class = 'build'>
 <li>Nested <code>DataTable</code>
@@ -5844,12 +5843,12 @@ BehaviouR::DeepLabCutLoad(FileName = &quot;DeepLabCut_ouput.csv&quot;,
 
 </article></slide><slide class=""><hgroup><h2>Workflow</h2></hgroup><article  id="workflow">
 
-<div id="htmlwidget-30487d1ffeb9cb37a909" style="width:1000px;height:432px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-30487d1ffeb9cb37a909">{"x":{"diagram":"digraph Workflow {\n      # node definitions with substituted label text\n      node [fontname = Helvetica, shape = rectangle]        \n      tab1 [label = \"Video of Experiment\"]\n      tab2 [label = \"Extraction of Feature Coordinates (DeepLabCut)\"]\n      tab3 [label = \"Postprocessing (BehaviouR)\"]\n      tab4 [label = \"Calculation of Parameters (BehaviouR, DataTable etc.)\"]\n      tab5 [label = \"Statistical Analysis (lme4, brms, etc.)\"]\n      tab6 [label = \"Export Data as csv etc.\"]\n      tab7 [label = \"Report Summary\"]\n      tab8 [label = \"External Calculation of Parameters (Python, MATLAB, etc.)\"]\n\n      # edge definitions with the node IDs\n      tab1 -> tab2 -> tab3 -> tab4 -> tab5;\n      tab4 -> tab6\n      tab5 -> tab7\n      tab8 -> tab5\n      tab3 -> tab6\n      tab6 -> tab8\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-69a8276555703171c812" style="width:1000px;height:432px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-69a8276555703171c812">{"x":{"diagram":"digraph Workflow {\n      # node definitions with substituted label text\n      node [fontname = Helvetica, shape = rectangle]        \n      tab1 [label = \"Video of Experiment\"]\n      tab2 [label = \"Extraction of Feature Coordinates (DeepLabCut)\"]\n      tab3 [label = \"Postprocessing (BehaviouR)\"]\n      tab4 [label = \"Calculation of Parameters (BehaviouR, DataTable etc.)\"]\n      tab5 [label = \"Statistical Analysis (lme4, brms, etc.)\"]\n      tab6 [label = \"Export Data as csv etc.\"]\n      tab7 [label = \"Report Summary\"]\n      tab8 [label = \"External Calculation of Parameters (Python, MATLAB, etc.)\"]\n\n      # edge definitions with the node IDs\n      tab1 -> tab2 -> tab3 -> tab4 -> tab5;\n      tab4 -> tab6\n      tab5 -> tab7\n      tab8 -> tab5\n      tab3 -> tab6\n      tab6 -> tab8\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
-</article></slide><slide class=""><hgroup><h2>References</h2></hgroup><article  id="references" class="unnumbered">
+</article></slide><slide class=""><hgroup><h2>References</h2></hgroup><article  class="unnumbered" id="references">
 
-<div id="refs" class="references">
+<div class="references" id="refs">
 <div id="ref-martin_abadi_tensorflow_2015">
 <p>Martín Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen, Craig Citro, Greg S. Corrado, et al. 2015. “TensorFlow: Large-Scale Machine Learning on Heterogeneous Systems.” In. <a href='https://www.tensorflow.org/' title=''>https://www.tensorflow.org/</a>.</p></div>
 
