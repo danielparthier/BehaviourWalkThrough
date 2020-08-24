@@ -1,0 +1,1 @@
+[Here is the link to google coab notebook, you can perform training network and analyzing videos there directly.](https://colab.research.google.com/drive/1a7bKwNHMIM5bpPZAnUwcWbqtCZD9ggik?usp=sharing)
