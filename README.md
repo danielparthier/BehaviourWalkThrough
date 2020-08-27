@@ -20,3 +20,13 @@ with Deep Learning.” *Nature Neuroscience* 21 (9): 1281–9.
 </div>
 
 </div>
+
+
+### Link to the presentation slides
+[Google Slides](https://docs.google.com/presentation/d/13C1nwbn8TXCL6q3_OCsfS4dNnhzVyY2tP0sRm6na96g/edit?usp=sharing)
+
+
+### To the Google Colab Notebook, please find it [here](https://github.com/danielparthier/BehaviourWalkThrough/tree/master/notebooks)
+
+### The `BehaviouR` package is written by [Daniel Parthier](https://github.com/danielparthier) in R
+
